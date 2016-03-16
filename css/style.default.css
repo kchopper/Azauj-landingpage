@@ -188,7 +188,7 @@ INTRO
     min-height: 600px;
     text-align: center;
     color: #fff;
-    
+
 }
 #intro .item {
     min-height: 100%;
@@ -204,6 +204,7 @@ INTRO
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     background-attachment: fixed;
 }
+
 #intro .item .btn {
     text-shadow: none;
 }
@@ -1498,3 +1499,10 @@ ul {
 
 
 
+/*media query*/
+@media (max-width: 500px) {
+
+    .mobile-social{
+        display: none;
+    } 
+}
