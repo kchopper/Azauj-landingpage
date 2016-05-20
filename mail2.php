@@ -1,6 +1,6 @@
 <?php
 //Personal Info
-$to = "rnfgakcp@mailparser.io";
+$to = "pxkwsfzc@mailparser.io";
 $subject = "Azauj registration form";
 $Name=$_POST['name'];
 $Cnic=$_POST['CNIC'];
@@ -15,6 +15,9 @@ $Address=$_POST['address'];
 $Gender=$_POST['gender'];
 $Height=$_POST['height'];
 $Appearence=$_POST['appearence'];
+$Disabled=$_POST['physically_disabled'];
+$Disability=$_POST['disability'];
+$Smoking=$_POST['smoking'];
 $Age=$_POST['age'];
 $Degree=$_POST['education_degree'];
 $Institution=$_POST['education_institute'];
@@ -29,15 +32,10 @@ $City=$_POST['current_city'];
 $Owner=$_POST['owner'];
 $Country=$_POST['current_country'];
 $Relocate= $_POST['willing_to_relocate'];
-$AboutParents=$_POST['parents_details'];
-$AboutSiblings=$_POST['siblings_details'];
+$FamiyValues=$_POST['family_values'];
+$FamilyType=$_POST['family_type'];
+$FamilyStatus=$_POST['family_status'];
 $Additional=$_POST['additional_information'];
-
-
-
-
-
-
 
 
 //Requirments
@@ -53,16 +51,36 @@ $NationalityReq=$_POST['nationality_req'];
 $AppearenceReq=$_POST['appearence_req'];
 $MaritalStatusReq=$_POST['marital_status_req'];
 $NoOfChildrenReq=$_POST['marital_status_children_req'];
+$SmokingReq=$_POST['smoking_req'];
+$FamilyValuesReq=$_POST['family_values_req'];
+$FamilyTypeReq=$_POST['family_type_req'];
+$FamilyStatusReq=$_POST['family_status_req'];
 $CityReq=$_POST['current_city_req'];
 $CountryReq=$_POST['current_country_req'];
-$RelocateReq=$_POST['willing_to_relocate_req'];
 
 
-$txt = "Name: ".$Name.  " \nCnic:" .$Cnic.  "\nContact Person:" .$ContactPerson.  "\nContact Number: " .$ContactNumber. "\nEmail: ".$Email.  "\nAddress:" .$Address.  "\nGender:" .$Gender.  "\nHeight:" .$Height.  "\nBeared/Hijabi:" .$Appearence. "\nAge:"
-    .$Age. "\nDegree:" .$Degree. "\nInstitution:" .$Institution.  "\nJob Title:" .$JobTitle. "\nIncome:" .$Income. "\nMarital Status:" .$MaritalStatus. "\nNumber Of Children:" .$NoOfChildren. "\nReligios belief:" .$ReligiousBelief. "\nCaste:" .$Caste. "\nNationality:" .$Nationality. "\nCity:" .$City. "\nCountry:" .$Country.  "\n About Parents:" .$AboutParents. 
-    "\n About Siblings:" .$AboutSiblings. "\n Additional Information:" .$Additional. "\nWilling To Relocate:" .$Relocate. "\nAge From:" .$AgeFrom. "\nAge To:" .$AgeTo. 
-    "\nHeight From:" .$HeightFrom. "\nHeight To:" .$HeightTo. "\nEducation:" .$EducationReq. "\nReligious Belief:" .$ReligiousBeliefReq. "\nCaste:" .$CasteReq. "\nNationality:" .$NationalityReq. "\nAppearence:" .$AppearenceReq. 
-    "\nMarital Status:" .$MaritalStatusReq. "\nNumber Of children:" .$NoOfChildrenReq. "\nCity:" .$CityReq. "\nCountry:" .$CountryReq. "\nRelocate:" .$RelocateReq; 
+
+$txt = "Name: ".$Name.  " \nCnic:" .$Cnic.  "\nContact Person:" .$ContactPerson.  
+"\nContact Number: " .$ContactNumber. "\nEmail: ".$Email.  "\nAddress:" .$Address.  "\nGender:" .$Gender. "\nAge:" .$Age. 
+"\nHeight:" .$Height.  
+"\nBeard/Hijabi:" .$Appearence.
+"\nJob Title:" .$JobTitle.
+"\nIncome:" .$Income.  
+  
+ "\nDegree:" .$Degree. "\nInstitution:" .$Institution.   
+ 
+    "\nMarital Status:" .$MaritalStatus. "\nNumber Of Children:" .$NoOfChildren. 
+    "\nReligious belief:" .$ReligiousBelief. "\nCaste:" .$Caste. "\nNationality:" .$Nationality. "\nCity:" .$City. "\nOwnerShip of House:" .$Owner.
+    "\nCountry:" .$Country.    "\n Additional Information:" .$Additional. "\nWilling To Relocate:" .$Relocate.  
+    "\nFamily Values:" .$FamiyValues. "\nFamily Type:" .$FamilyType. "\nFamily Status:" .$FamilyStatus. 
+    "\nDisabled:" .$Disabled. "\nDisability:" .$Disability. "\nSmoking:" .$Smoking.
+    "\nAge From:" .$AgeFrom. "\nAge To:" .$AgeTo. 
+    "\nHeight From:" .$HeightFrom. "\nHeight To:" .$HeightTo. "\nEducation:" .$EducationReq. 
+    "\nReligious Belief:" .$ReligiousBeliefReq. "\nCaste:" .$CasteReq. "\nNationality:" .$NationalityReq. 
+    "\nBeard/Hijabi:" .$AppearenceReq. 
+    "\nMarital Status:" .$MaritalStatusReq. "\nNumber Of children:" .$NoOfChildrenReq. "\nSmoking:" .$SmokingReq. 
+      "\nCity:" .$CityReq. "\nCountry:" .$CountryReq.
+    "\nFamily Values:" .$FamilyValuesReq. "\nFamily Type:" .$FamilyTypeReq. "\nFamily Status:" .$FamilyStatus;
 $headers = $Email ;
 
 mail($to, $subject, $txt, $headers);
