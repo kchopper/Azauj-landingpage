@@ -35,6 +35,8 @@ $Relocate= $_POST['willing_to_relocate'];
 $FamiyValues=$_POST['family_values'];
 $FamilyType=$_POST['family_type'];
 $FamilyStatus=$_POST['family_status'];
+$AboutSiblings=$_POST['about_siblings'];
+$AboutParents=$_POST['about_parents'];
 $Additional=$_POST['additional_information'];
 
 
@@ -71,7 +73,7 @@ $txt = "Name: ".$Name.  " \nCnic:" .$Cnic.  "\nContact Person:" .$ContactPerson.
  
     "\nMarital Status:" .$MaritalStatus. "\nNumber Of Children:" .$NoOfChildren. 
     "\nReligious belief:" .$ReligiousBelief. "\nCaste:" .$Caste. "\nNationality:" .$Nationality. "\nCity:" .$City. "\nOwnerShip of House:" .$Owner.
-    "\nCountry:" .$Country.    "\n Additional Information:" .$Additional. "\nWilling To Relocate:" .$Relocate.  
+    "\nCountry:" .$Country. "\nAbout Parents:" .$AboutParents. "\nAbout Siblings:" .$AboutSiblings.   "\n Additional Information:" .$Additional. "\nWilling To Relocate:" .$Relocate.  
     "\nFamily Values:" .$FamiyValues. "\nFamily Type:" .$FamilyType. "\nFamily Status:" .$FamilyStatus. 
     "\nDisabled:" .$Disabled. "\nDisability:" .$Disability. "\nSmoking:" .$Smoking.
     "\nAge From:" .$AgeFrom. "\nAge To:" .$AgeTo. 
