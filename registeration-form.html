@@ -83,7 +83,16 @@
 
         
         </script>
-
+    
+   <!--  <script>
+        $(document).ready(function(){
+        
+        $("#help").click(function(){
+            
+           $("#helpModal").modal();
+        });
+    });
+    </script> -->
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -97,12 +106,51 @@
 
 
     </head>
-
+    
     <body id="reg1">
 
+    
+        <div class="col-xs-12 col-sm-12">
+            <p style="font-size:30px ; color:floralwhite;">Azauj WebApp Coming Soon . . .</p>        
+            </div>
 
+        
+        <div class="col-xs-12 col-sm-12">
+            <p style="color:floralwhite;">Need help with the form? <a style="color:orange; cursor:pointer; cursor:hand;" data-toggle="modal" data-target="#helpModal">   Click Here</a> to request for a call back from our team.</p>
+        </div>
 
+        <div id="helpModal" class="modal fade md" role="dialog">
+        <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="color:orange;">Give us your name and number and we will call you back</h4>
+            </div>
+            <div class="modal-body"> 
 
+           <form class="form-inline" role="form" action="mail3.php" method="post">
+  <div class="form-group">
+    <label for="Name"></label>
+    <input type="test" class="form-control" id="Name" name="name" placeholder="Full Name" required value="">
+  </div>
+  <div class="form-group">
+    <label for="Number"></label>
+    <input type="text" class="form-control" id="Number" name="number" placeholder="Number" required value="">
+  </div>
+  
+  <button type="submit" class="btn btn-primary" style="color:orange;">Submit</button>
+               
+             <p style="padding:20px;"></p>  
+            
+               <button class="btn btn-default btn-data-sm" data-dismiss="modal">Cancel</button>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+        
 
 
         <div class="container" style="background:rgba(255,153,0,0.4)">
@@ -111,14 +159,18 @@
 
                 <div class="row">
 
-                    <div class="col-md-12">
+                <div class="col-md-3">
+                    <img src="img/logo.jpg" alt="">
+                </div>
 
-                        <h1 id="reg">Azauj Registration Form</h1>
+                    <div style="margin-left:5px;" class="col-md-5">
+
+                        <h1 id="reg">Registration Form</h1>
 
                         <h3 id="reg">Sign Up for <em>Free</em> NOW!</strong></h3>
 
                     </div>
-                    <hr>   
+                       
                 </div>
             </div>
             <div class="row" style="text-align:center;">
@@ -327,7 +379,7 @@
                                             <option value="25,000-30,000" >25,000-30,000</option>
                                             <option value="30,000-40,000" >30,000-40,000</option>
                                             <option value="40,000-50,000" >40,000-50,000</option>
-                                            <option value="50,000-60,000" >50,000-50,000</option>
+                                            <option value="50,000-60,000" >50,000-60,000</option>
                                             <option value="60,000-70,000" >60,000-70,000</option>
                                             <option value="70,000-80,000" >70,000-80,000</option>
                                             <option value="80,000-90,000" >80,000-90,000</option>
@@ -408,7 +460,7 @@
                                 <option value="Muslim-Abbasi">Muslim-Abbasi</option>
                                 <option value="Muslim-Others">Muslim-Others</option>
                                 <option value="Hindu">Hindu</option>
-                                <option value="Christain">Christain</option>
+                                <option value="Christian">Christianity</option>
                                 <option value="Parsi">Parsi</option>
                                 
                                 

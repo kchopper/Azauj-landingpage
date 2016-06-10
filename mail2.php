@@ -1,7 +1,10 @@
-<?php
-//Personal Info
-$to = "pxkwsfzc@mailparser.io";
-$subject = "Azauj registration form";
+<?php 
+
+ $url = 'https://api.sendgrid.com/';
+ $user = 'Hassan.syed';
+ $pass = 'Azaujpass011';
+ //Personal Info
+
 $Name=$_POST['name'];
 $Cnic=$_POST['CNIC'];
 $ContactPerson=$_POST['contact'];
@@ -60,9 +63,12 @@ $FamilyStatusReq=$_POST['family_status_req'];
 $CityReq=$_POST['current_city_req'];
 $CountryReq=$_POST['current_country_req'];
 
-
-
-$txt = "Name: ".$Name.  " \nCnic:" .$Cnic.  "\nContact Person:" .$ContactPerson.  
+ $params = array(
+      'api_user' => $user,
+      'api_key' => $pass,
+      'to' => 'pxkwsfzc@mailparser.io',
+      'subject' => 'Azauj Requirments',
+      'html' => "Name: ".$Name.  " \nCnic:" .$Cnic.  "\nContact Person:" .$ContactPerson.  
 "\nContact Number: " .$ContactNumber. "\nEmail: ".$Email.  "\nAddress:" .$Address.  "\nGender:" .$Gender. "\nAge:" .$Age. 
 "\nHeight:" .$Height.  
 "\nBeard/Hijabi:" .$Appearence.
@@ -82,8 +88,29 @@ $txt = "Name: ".$Name.  " \nCnic:" .$Cnic.  "\nContact Person:" .$ContactPerson.
     "\nBeard/Hijabi:" .$AppearenceReq. 
     "\nMarital Status:" .$MaritalStatusReq. "\nNumber Of children:" .$NoOfChildrenReq. "\nSmoking:" .$SmokingReq. 
       "\nCity:" .$CityReq. "\nCountry:" .$CountryReq.
-    "\nFamily Values:" .$FamilyValuesReq. "\nFamily Type:" .$FamilyTypeReq. "\nFamily Status:" .$FamilyStatus;
-$headers = $Email ;
+    "\nFamily Values:" .$FamilyValuesReq. "\nFamily Type:" .$FamilyTypeReq. "\nFamily Status:" .$FamilyStatus,
+      'text' => 'testing body2',
+      'from' => 'hamza.bhinder@azauj.com',
+   );
 
-mail($to, $subject, $txt, $headers);
-header('location:index.html');
+ $request = $url.'api/mail.send.json';
+ // Generate curl request
+ $session = curl_init($request);
+ // Tell curl to use HTTP POST
+ curl_setopt ($session, CURLOPT_POST, true);
+ // Tell curl that this is the body of the POST
+ curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
+ // Tell curl not to return headers, but do return the response
+ curl_setopt($session, CURLOPT_HEADER, false);
+ curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+ // curl_setopt($session, CURLOPT_SSL_VERIFYPEER, false);
+ curl_setopt ($session, CURLOPT_CAINFO, "Certificate/cacert.pem");  
+ // obtain response
+ $response = curl_exec($session);
+ if (curl_errno($session)) { 
+   print curl_error($session); 
+ } 
+ curl_close($session);
+ 
+ header('location:index.html');
+?>
