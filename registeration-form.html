@@ -39,6 +39,7 @@
 
         <!-- Mordernizr -->
         <script src="js/modernizr-2.6.2.min.js"></script>
+        <script src="js/jquery-1.11.0.min.js"></script>
 
         <!-- Responsivity for older IE -->
         <!--[if lt IE 9]>
@@ -49,40 +50,60 @@
 
         </style>
         <script type="text/javascript">
-            function myFunction() {
-                document.getElementById("myDIV").style.display = "none";
-            }
-            function hideshow(which){
-                if (!document.getElementById)
-                    return
-                    if (which.style.display=="block")
-                    which.style.display="block"
-                    else
-                        which.style.display="block"
-                        }
 
-
-            function myFunction1() {
-                document.getElementById("myDIV2").style.display = "none";
-            }
-        </script>
+        $(document).ready(function(){
+    // do your checks of the radio buttons here and show/hide what you want to
+    $("#myDIV").show();
+    
+    $(document).on('click', '.married' , function() {
+        
+        if (this.value == "never_married"){            
+            $("#myDIV").hide('slow');           
+        } else {
+            $("#myDIV").show('slow');           
+        }       
+    })
+    
+});
+</script>
         
         <script type="text/javascript">
-             function myFunction2() {
-                document.getElementById("myDIV1").style.display = "none";
-            }
-            function hideshow(which){
-                if (!document.getElementById)
-                    return
-                    if (which.style.display=="block")
-                    which.style.display="block"
-                    else
-                        which.style.display="block"
-                        }
-
-
+           
+              $(document).ready(function(){
+    // do your checks of the radio buttons here and show/hide what you want to
+    $("#myDIV1").show();
+    
+    $(document).on('click', '.disable' , function() {
+        
+        if (this.value == "No"){            
+            $("#myDIV1").hide('slow');           
+        } else {
+            $("#myDIV1").show('slow');           
+        }       
+    })
+    
+});
         
         </script>
+
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+    // do your checks of the radio buttons here and show/hide what you want to
+    $("#myDIV2").show();
+    
+    $(document).on('click', '.married_req' , function() {
+        
+        if (this.value == "Never married"){            
+            $("#myDIV2").hide('slow');           
+        } else {
+            $("#myDIV2").show('slow');           
+        }       
+    })
+    
+});
+</script>
+    
     
    <!--  <script>
         $(document).ready(function(){
@@ -307,10 +328,10 @@
                         <label  class="col-sm-offset-1 col-sm-2 control-label" id="reg" >Physically Disabled*</label>
                         <div class="col-sm-2">
                             <div class="radio" id="physically_disabled">
-                                <label id="reg"><input type="radio" name="physically_disabled" value="Yes" 
-                                                       onclick="hideshow(myDIV1)" >Yes</label>
-                                <label id="reg"><input type="radio" name="physically_disabled" value="No"
-                                                       onclick="myFunction2()">No</label>
+                                <label id="reg"><input class="disable" type="radio" name="physically_disabled" value="Yes" 
+                                                      >Yes</label>
+                                <label id="reg"><input class="disable" type="radio" name="physically_disabled" value="No"
+                                                       >No</label>
                                
 
                             </div>
@@ -400,13 +421,13 @@
                         <label  class="col-sm-offset-1 col-sm-2 control-label" id="reg" >Marital Status*</label>
                         <div class="col-sm-5">
                             <div class="radio" id="marital_status">
-                                <label id="reg"><input type="radio" name="marital_status" value="never_married" 
-                                                       onclick="myFunction()" >Never Married</label>
-                                <label id="reg"><input type="radio" name="marital_status" value="divorced"
+                                <label id="reg"><input type="radio" class="married" name="marital_status" value="never_married" 
+                                                       >Never Married</label>
+                                <label id="reg"><input class="married" type="radio" name="marital_status" value="divorced"
                                                        onclick="hideshow(myDIV)">Divorced</label>
-                                <label id="reg" ><input type="radio" name="marital_status" value="widow" 
+                                <label id="reg" ><input class="married" type="radio" name="marital_status" value="widow" 
                                                         onclick="hideshow(myDIV)">Widow</label>
-                                <label id="reg"><input type="radio" name="marital_status" value="widower" 
+                                <label id="reg"><input class="married" type="radio" name="marital_status" value="widower" 
                                                        onclick="hideshow(myDIV)" >Widower</label>
 
                             </div>
@@ -717,14 +738,14 @@
                                 <label  class="col-sm-offset-1 col-sm-2 control-label" id="reg" >Martial Status*</label>
                                 <div class="col-sm-5">
                                     <div class="radio">
-                                        <label id="reg"><input type="radio" name="marital_status_req" value="Never married" 
-                                                               onclick="myFunction1()" >Never Married</label>
-                                        <label id="reg"><input type="radio" name="marital_status_req" value="divorced" 
-                                                               onclick="hideshow(myDIV2)">Divorced</label>
-                                        <label id="reg" ><input type="radio" name="marital_status_req" value="widow" 
-                                                                onclick="hideshow(myDIV2)">Widow</label>
-                                        <label id="reg"><input type="radio" name="marital_status_req" value="widower" 
-                                                               onclick="hideshow(myDIV2)">Widower</label>
+                                        <label id="reg"><input class="married_req" type="radio" name="marital_status_req" value="Never married" 
+                                                              >Never Married</label>
+                                        <label id="reg"><input class="married_req" type="radio" name="marital_status_req" value="divorced" 
+                                                               >Divorced</label>
+                                        <label id="reg" ><input class="married_req" type="radio" name="marital_status_req" value="widow" 
+                                                               >Widow</label>
+                                        <label id="reg"><input class="married_req" type="radio" name="marital_status_req" value="widower" 
+                                                              >Widower</label>
 
                                     </div>
                                 </div>
@@ -849,7 +870,7 @@
         
 
     <!-- js base -->
-    <script src="js/jquery-1.11.0.min.js"></script>
+    
     <script src="js/bootstrap.min.js"></script>
 
 
